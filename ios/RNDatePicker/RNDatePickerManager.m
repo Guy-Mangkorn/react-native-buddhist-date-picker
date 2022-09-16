@@ -37,14 +37,14 @@ RCT_EXPORT_METHOD(removeListeners : (NSInteger)count) {
 
 - (UIView *)view
 {
-    if(NSLocale == "th") {
+    NSLocale * locale = [RCTConvert NSLocale:[props objectForKey:@"locale"]];
+    if(locale == "th") {
         DatePicker *picker1 = [DatePicker new];
         NSCalendar *calender = [[NSCalendar alloc]initWithCalendarIdentifier: NSBuddhistCalendar];
         picker1.calendar = calender;
         return picker1;
-    } else {
-        return [DatePicker new];
     }
+    return [DatePicker new];
 }
 
 RCT_EXPORT_VIEW_PROPERTY(date, NSDate)
