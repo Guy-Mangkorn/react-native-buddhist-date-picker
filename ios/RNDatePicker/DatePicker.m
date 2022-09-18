@@ -83,6 +83,15 @@
     #pragma clang diagnostic pop
 }
 
+- (void)setCalendarMode:(NSString *)calendarMode
+{
+    if([calendarMode isEqualToString:@"th"]) {
+        self.calendar =  [[NSCalendar alloc]initWithCalendarIdentifier: NSCalendarIdentifierBuddhist];
+    } else {
+        self.calendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
+    }
+}
+
 
 - (void)setTextColorProp:(NSString *)hexColor
 {

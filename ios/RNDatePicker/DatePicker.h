@@ -11,5 +11,7 @@
 
 - (void)setTextColorProp:(NSString *)hexColor;
 
+- (void)setCalendarMode:(NSString *)calendarMode;
+
 @end
 
